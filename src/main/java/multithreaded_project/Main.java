@@ -1,17 +1,20 @@
 package multithreaded_project;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+        int numberOfThreads = 5;
+        ExecutorService executorService = Executors.newFixedThreadPool(numberOfThreads);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Define the files to process
+        String[] files = {
+                "src/main/resources/input/file1.txt",
+                "src/main/resources/input/file2.txt",
+                "src/main/resources/input/file3.txt"
+        };
     }
 }
